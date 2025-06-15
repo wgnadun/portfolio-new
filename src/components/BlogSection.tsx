@@ -28,7 +28,7 @@ export function BlogSection() {
     excerpt: 'Building RESTful APIs with Node.js and MongoDB is a powerful and flexible way to deliver data-driven applications. By following clean architecture, modular design, and best practices, you can ensure your API is secure, maintainable, and scalable.Start small, test frequently, and document everything.',
     image: RestApI,
     date: 'August 15, 2023',
-    url:''
+    url:'https://medium.com/@wgnadundananjaya/building-restful-apis-with-node-js-and-mongodb-d579ed6f360d'
   }];
 
   // Auto-play functionality
