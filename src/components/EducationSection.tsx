@@ -16,33 +16,20 @@ export default function EducationSection() {
     grade: '1.5930',  }];
 
   const certifications = [{
-    name: 'React.js - Advanced Web Development',
-    issuer: 'Udemy',
-    date: '2023',
-    color: 'bg-gray-600 dark:bg-gray-400',
-    icon: '⚛️',
-    level: 'Advanced'
-  }, {
-    name: 'Programming with JavaScript',
-    issuer: 'Meta',
-    date: '2022',
-    color: 'bg-gray-600 dark:bg-gray-400',
-    icon: '📜',
-    level: 'Professional'
-  }, {
-    name: 'Cloud Computing - AWS & Azure',
-    issuer: 'Coursera',
-    date: '2023',
+    
+    name: 'AWS Educate Introduction to Cloud 101',
+    issuer: ' Amazon Web Services (AWS)!',
+    date: '2025',
     color: 'bg-gray-600 dark:bg-gray-400',
     icon: '☁️',
-    level: 'Intermediate'
+  
   }, {
-    name: 'Full Stack Development',
-    issuer: 'freeCodeCamp',
-    date: '2023',
+    name: 'AWS Educate Getting Started with Storage',
+    issuer: ' Amazon Web Services (AWS)!',
+    date: '2025',
     color: 'bg-gray-600 dark:bg-gray-400',
-    icon: '🚀',
-    level: 'Professional'
+    icon: '☁️',
+
   }];
 
   return (
@@ -122,7 +109,7 @@ export default function EducationSection() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="text-2xl">{cert.icon}</div>
                   <span className={`${cert.color} text-white text-xs font-medium px-2 py-1 rounded`}>
-                    {cert.level}
+                   
                   </span>
                 </div>
 
