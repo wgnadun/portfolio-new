@@ -30,7 +30,6 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="min-h-screen py-10 px-4 bg-gray-50 dark:bg-[#0c1323]">
       <div className="container mx-auto max-w-7xl">
-        {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="mb-3 text-5xl font-bold text-gray-900 dark:text-gray-100">
             Projects
@@ -41,7 +40,6 @@ export default function ProjectsSection() {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid max-w-6xl gap-8 mx-auto sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, index) => (
             <div key={index} className="bg-white dark:bg-[#131c33] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group">
@@ -63,7 +61,6 @@ export default function ProjectsSection() {
                   {project.description}
                 </p>
                 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, tagIndex) => (
                     <span key={tagIndex} className="px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900/30 dark:text-blue-200">
@@ -72,7 +69,6 @@ export default function ProjectsSection() {
                   ))}
                 </div>
                 
-                {/* Action Links */}
                 <div className="flex gap-4">
                   <a href={project.githubLink} target='_blank' className="flex items-center gap-2 text-sm font-medium text-gray-700 transition-colors dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                     <Github size={16} />

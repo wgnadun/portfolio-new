@@ -1,7 +1,6 @@
 import { Mail, Download, ChevronDown } from 'lucide-react';
 
 const resume = '_CV.pdf';
-// Use a string path for public assets in Next.js
 const propic = '/profile.webp';
 
 export default function HeroSection() {
@@ -39,10 +38,8 @@ export default function HeroSection() {
             
             <div className="flex justify-center order-1 md:order-2">
               <div className="relative group">
-                {/* Outer breathing ring */}
                 <div className="absolute inset-0 w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border-2 border-gray-400 dark:border-gray-500 animate-pulse group-hover:animate-[breathe_2s_ease-in-out_infinite] transition-all duration-300"></div>
                 
-                {/* Profile picture container */}
                 <div className="w-48 h-48 p-1 overflow-hidden transition-all duration-300 border-4 border-gray-200 rounded-full sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 dark:border-gray-700 group-hover:border-gray-500 dark:group-hover:border-gray-400">
                   <div className="w-full h-full overflow-hidden bg-gray-100 rounded-full dark:bg-gray-800">
                     <img 
@@ -53,14 +50,12 @@ export default function HeroSection() {
                   </div>
                 </div>
                 
-                {/* Subtle glow effect */}
                 <div className="absolute transition-all duration-500 rounded-full inset-2 bg-gray-200/50 dark:bg-gray-700/50 blur-xl -z-10 group-hover:bg-gray-300/70 dark:group-hover:bg-gray-600/70"></div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Down Indicator */}
         <div className="absolute z-10 transform -translate-x-1/2 bottom-4 sm:bottom-6 md:bottom-8 left-1/2">
           <a href="#about" className="flex flex-col items-center text-gray-600 transition-colors cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white animate-bounce">
             <span className="mb-1 text-xs sm:mb-2 sm:text-sm opacity-80">Scroll Down</span>

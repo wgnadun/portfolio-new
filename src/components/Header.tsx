@@ -13,13 +13,11 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Consider hero section as first 100vh or 800px, whichever is smaller
       const heroHeight = Math.min(window.innerHeight, 800);
-      setIsScrolled(window.scrollY > heroHeight * 0.8); // Show navbar when 80% through hero
+      setIsScrolled(window.scrollY > heroHeight * 0.8); 
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      // Only trigger hover effect when scrolled down
       if (isScrolled) {
         setIsHovering(e.clientY <= 60);
       }
@@ -28,7 +26,6 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouseMove);
     
-    // Initial check
     handleScroll();
 
     return () => {
@@ -37,7 +34,6 @@ export function Header() {
     };
   }, [isScrolled]);
 
-  // Determine visibility: always show in hero section, or show on hover when scrolled
   const isVisible = !isScrolled || (isScrolled && isHovering);
 
   const navLinks = [
@@ -88,7 +84,6 @@ export function Header() {
           w-auto max-w-40 md:max-w-lg mx-auto px-1 md:px-2`}>
         <div className="flex items-center justify-between px-2 py-1.5 md:px-4 md:py-3">
 
-          {/* Desktop Navigation */}
           <nav className="items-center hidden space-x-4 md:flex">
             {navLinks.map(link => {
               const IconComponent = link.icon;
@@ -125,7 +120,6 @@ export function Header() {
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <div className="flex items-center justify-center w-full gap-1 md:hidden">
             <button 
               onClick={toggleTheme} 
@@ -171,12 +165,10 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <div className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}>
           <div className="px-2 pb-2">
-            {/* Main navigation items (excluding Contact) */}
             <div className="grid grid-cols-3 gap-1 pt-1">
               {navLinks.filter(link => link.name !== 'Contact').map((link, index) => {
                 const IconComponent = link.icon;
@@ -199,7 +191,6 @@ export function Header() {
               })}
             </div>
             
-            {/* Contact button centered at bottom */}
             <div className="flex justify-center pt-1">
               {(() => {
                 const contactLink = navLinks.find(link => link.name === 'Contact');
