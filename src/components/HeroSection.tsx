@@ -1,6 +1,6 @@
 import { Mail, Download, ChevronDown } from 'lucide-react';
 
-const resume = 'Nadun_dananjaya_CV.pdf';
+const resume = '_CV.pdf';
 // Use a string path for public assets in Next.js
 const propic = '/profile.webp';
 
