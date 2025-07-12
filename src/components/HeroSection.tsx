@@ -1,9 +1,25 @@
 import { Mail, Download, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const resume = 'CV.pdf';
 const propic = '/profile.webp';
 
 export default function HeroSection() {
+  const [scrollY, setScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      
+      setIsVisible(currentScrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <section id="home" className="relative flex items-center justify-center w-full min-h-screen px-4 transition-colors duration-300 bg-white sm:px-6 lg:px-8 dark:bg-gray-900">
@@ -56,14 +72,50 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="absolute z-10 transform -translate-x-1/2 bottom-4 sm:bottom-6 md:bottom-8 left-1/2">
-          <a href="#about" className="flex flex-col items-center text-gray-600 transition-colors cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white animate-bounce">
-            <span className="mb-1 text-xs sm:mb-2 sm:text-sm opacity-80">Scroll Down</span>
-            <div className="flex items-start justify-center w-4 h-6 p-1 border-2 border-current rounded-full sm:w-6 sm:h-10">
-              <div className="w-0.5 h-1.5 sm:w-1 sm:h-2 bg-current rounded-full animate-[bounce_1.5s_infinite]"></div>
+        <div 
+          className={`absolute bottom-0 left-0 right-0 transition-all duration-500 ease-out ${
+            isVisible 
+              ? 'opacity-0 translate-y-full' 
+              : 'opacity-100 translate-y-0'
+          }`}
+        >
+          <div className="flex justify-center px-4 mb-6 sm:px-6 md:px-8">
+            <div className="relative max-w-xs overflow-hidden transition-all duration-500 border shadow-xl backdrop-blur-2xl bg-white/5 dark:bg-black/8 rounded-2xl border-white/10 dark:border-gray-700/20 group hover:bg-white/8 dark:hover:bg-black/12">
+              
+              <div className="absolute inset-0 bg-gradient-to-r from-white/3 via-white/6 to-white/3 dark:from-gray-900/3 dark:via-gray-900/8 dark:to-gray-900/3"></div>
+              
+              <div className="absolute top-0 h-px left-3 right-3 bg-gradient-to-r from-transparent via-white/20 to-transparent dark:via-gray-400/25"></div>
+              
+              <div className="relative z-10 flex items-center justify-center px-4 py-3 sm:px-5 sm:py-4">
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center">
+                    <span className="text-xs font-light tracking-wider text-gray-700 uppercase dark:text-gray-300 opacity-90">
+                      Scroll
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-center space-x-1.5">
+                    <div className="w-1 h-1 rounded-full bg-white/50 dark:bg-gray-400/50 animate-pulse"></div>
+                    <div className="w-1 h-1 rounded-full bg-white/40 dark:bg-gray-400/40 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+                    <div className="w-1 h-1 rounded-full bg-white/30 dark:bg-gray-400/30 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+                  </div>
+                  
+                  <div className="relative">
+                    <div className="flex items-center justify-center w-6 h-6 transition-all border rounded-full bg-white/15 dark:bg-gray-800/20 backdrop-blur-sm border-white/20 dark:border-gray-600/25 group-hover:bg-white/20 dark:group-hover:bg-gray-800/30 group-hover:scale-110 duration-400">
+                      <ChevronDown size={12} className="text-gray-700 dark:text-gray-300 animate-float opacity-90" />
+                    </div>
+                    <div className="absolute inset-0 w-6 h-6 rounded-full bg-white/10 dark:bg-gray-800/15 blur-md animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute inset-0 transition-opacity opacity-0 bg-gradient-to-r from-transparent via-white/8 to-transparent dark:via-gray-300/8 animate-sweep group-hover:opacity-100 duration-800"></div>
+              
+              <div className="absolute top-0 left-0 right-0 transition-opacity duration-500 opacity-50 h-1/2 bg-gradient-to-b from-white/10 to-transparent dark:from-gray-400/10 group-hover:opacity-70"></div>
+              
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/8 to-white/8 dark:from-gray-700/8 dark:to-gray-700/8 blur-lg opacity-30 -z-10"></div>
             </div>
-            <ChevronDown size={14} className="mt-0.5 sm:mt-1 animate-[bounce_2s_infinite] sm:w-5 sm:h-5" />
-          </a>
+          </div>
         </div>
         
         <style>{`
@@ -76,6 +128,37 @@ export default function HeroSection() {
               transform: scale(1.05);
               opacity: 1;
             }
+          }
+          
+          @keyframes sweep {
+            0% {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+          }
+          
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-1px);
+            }
+          }
+          
+          .animate-sweep {
+            animation: sweep 6s ease-in-out infinite;
+          }
+          
+          .animate-float {
+            animation: float 3s ease-in-out infinite;
           }
         `}</style>
       </section>
