@@ -6,7 +6,7 @@ export default function EducationSection() {
     duration: '2021 - Present',
     status: 'In Progress',
     description: 'Comprehensive coursework covering Data Structures & Algorithms, Object-Oriented Programming, Software Architecture Design, Database Systems, and Advanced Web Technologies. Maintaining strong academic performance while developing practical software solutions.',
-    gpa: '3.61/4.0',
+    gpa: '3.64/4.0',
   }, {
     degree: 'General Certificate Of Education Advanced Level',
     institution: 'CodeCamp Academy',

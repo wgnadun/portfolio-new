@@ -1,6 +1,6 @@
 import { Mail, Download, ChevronDown } from 'lucide-react';
 
-const resume = '_CV.pdf';
+const resume = 'Nadun_Dananjaya_CV.pdf';
 const propic = '/profile.webp';
 
 export default function HeroSection() {
