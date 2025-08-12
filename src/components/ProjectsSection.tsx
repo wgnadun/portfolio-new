@@ -5,6 +5,13 @@ import { Github } from 'lucide-react';
  
 export default function ProjectsSection() {
   const projects = [{
+    title: 'FashionHub - Online Apparel Store',
+    description: ' Developed a full-stack eCommerce web app using the MERN stack. Features include productsearch/filtering, order tracking, JWT-based auth, admin panel, PayPal payment integration with image management via Cloudinary and used Docker for containerization.',  
+    image: SpringImg,
+    tags: ['React', 'Redux', 'Node.js','Express.js', 'MongoDB', "JWT", "Cloudinary API", "PayPal API", "Docker"],
+    liveLink: '#',
+    githubLink: 'https://github.com/wgnadun/Apparel'
+  },{
     title: 'StayFinder - Accommodation Rental Platform',
     description: 'A web app for browsing accommodation listings with direct owner contact. Advertisers can post listings through flexible subscription plans. All posts require admin approval, ensuring quality and trust throughout the platform for both seekers and property owners.',
     image: StayImg,
@@ -25,7 +32,7 @@ export default function ProjectsSection() {
     tags: ['Spring Boot', 'React', 'React Native'],
     liveLink: '#',
     githubLink: 'https://github.com/software-architecture-project-kln/fuel-project'
-  }];
+  },];
 
   return (
     <section id="projects" className="min-h-screen py-10 px-4 bg-gray-50 dark:bg-[#0c1323]">
