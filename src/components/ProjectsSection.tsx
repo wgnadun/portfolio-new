@@ -8,7 +8,7 @@ export default function ProjectsSection() {
   const projects = [{
     title: 'FashionHub - Online Apparel Store',
     description: ' Developed a full-stack eCommerce web app using the MERN stack. Features include productsearch/filtering, order tracking, JWT-based auth, admin panel, PayPal payment integration with image management via Cloudinary and used Docker for containerization.',  
-    image: SpringImg,
+    image: FashionImg,
     tags: ['React', 'Redux', 'Node.js','Express.js', 'MongoDB', "JWT", "Cloudinary API", "PayPal API", "Docker"],
     liveLink: '#',
     githubLink: 'https://github.com/wgnadun/Apparel'
