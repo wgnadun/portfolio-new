@@ -1,4 +1,5 @@
 import { Github } from 'lucide-react';
+ const FashionImg = ('/4.png')
  const StayImg = ('/1.png');
  const MernImg = ('/3.png');
  const SpringImg = ('/2.png');
